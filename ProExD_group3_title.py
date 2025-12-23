@@ -21,6 +21,13 @@ def main():
     pg.display.set_caption("ラストコカー・コカー")
     screen = pg.display.set_mode((WIDTH, HEIGHT))
 
+    try:
+        pg.mixer.music.load("fig/Ethan Meixsell - Thor's Hammer.mp3") # ファイル名
+        pg.mixer.music.set_volume(0.5)          # 音量調節 (0.0 ～ 1.0)
+        pg.mixer.music.play(-1)                 # -1 を指定すると無限ループ再生
+    except pg.error:
+        print("BGMファイルが見つかりません。")
+
     # フォント
     # フォント（SysFont・日本語対応）
     title_font = pg.font.SysFont("meiryo",72)
@@ -63,10 +70,13 @@ def main():
             # クリック処理（中身は後で追加）
             if event.type == pg.MOUSEBUTTONDOWN:
                 if stage1_rect.collidepoint(event.pos):
+                    pg.mixer.music.stop()  #ゲーム開始前にBGMを止める
                     militaly_mode.run_military_mode(screen)  # STAGE 1 をクリックした時の処理を書く
+                    pg.mixer.music.play(-1) # ゲームから戻ってきたら再度再生
                 if stage2_rect.collidepoint(event.pos):
+                    pg.mixer.music.stop()  #ゲーム開始前にBGMを止める
                     arrow_mode.run_arrow_mode(screen)  # STAGE 2 をクリックした時の処理を書く
-
+                    pg.mixer.music.play(-1) # ゲームから戻ってきたら再度再生
         # 描画
         screen.blit(military_bg_img, military_bg_rect)
         screen.blit(arrow_bg_img, arrow_bg_rect)
