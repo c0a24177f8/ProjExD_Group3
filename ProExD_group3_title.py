@@ -1,6 +1,7 @@
 import math
 import os
 import random
+import subprocess
 import sys
 import time
 import pygame as pg
@@ -43,7 +44,7 @@ def main():
 
     # 背景として使う
     military_bg_img = pg.image.load("fig/militaly.png").convert() 
-    arrow_bg_img = pg.image.load("fig/arrow.png").convert()
+    arrow_bg_img = pg.image.load("fig/arrow_bg.png").convert()
 
     HALF_WIDTH = WIDTH // 2
     # 画面の左半分にフィットするようにリサイズ (1100 / 2 = 550)
@@ -74,8 +75,10 @@ def main():
                     militaly_mode.run_military_mode(screen)  # STAGE 1 をクリックした時の処理を書く
                     pg.mixer.music.play(-1) # ゲームから戻ってきたら再度再生
                 if stage2_rect.collidepoint(event.pos):
+                    pg.quit()  # pygameを終了
+                    subprocess.run([sys.executable, "kokakoka.py"])
                     pg.mixer.music.stop()  #ゲーム開始前にBGMを止める
-                    arrow_mode.run_arrow_mode(screen)  # STAGE 2 をクリックした時の処理を書く
+                    sys.exit()
                     pg.mixer.music.play(-1) # ゲームから戻ってきたら再度再生
         # 描画
         screen.blit(military_bg_img, military_bg_rect)
