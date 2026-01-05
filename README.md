@@ -11,7 +11,9 @@
 https://note.com/mjay/n/nf53d9beea2b5 最終閲覧日（2025年12月23日）
 * [ホーム画面の修正・画像生成] Gemini https://gemini.google.com 
 最終利用日(2025年12月22日)
-* [ミリタリーモード] Copilot https://copilot.microsoft.com 最終利用日（2025年12月23日
+* [ミリタリーモード] Copilot https://copilot.microsoft.com 最終利用日（2025年12月23日)
+* [ホーム画面bgm] Ethan Meixsell - Thor's Hammer https://breakingcopyright.com/song/ethan-meixsell-thors-hammer 最終利用日（2025年12月22日)
+* [アローモードbgm] Elektronomia Energy https://ncs.io/energy?_gl=1*6yclfr*_up*MQ..*_ga*MTAyNzQ1NDE3MC4xNzY3NjAyNDc0*_ga_PFS54FR7NV*czE3Njc2MDI0NzQkbzEkZzAkdDE3Njc2MDI2MzgkajU0JGwwJGgw 最終利用日（2025年12月23日)
 
 
 ## ゲームの遊び方
